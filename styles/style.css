@@ -1,0 +1,43 @@
+.main-container { 
+    margin: 0 auto;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.header, .caller-id, .footer {
+    padding: 5px 15px;
+}
+
+
+.header {
+    max-height: 300px;
+    background-color: red;
+}
+
+.header-text {
+    text-align: right;
+}
+
+.caller-id {
+    height: 600px;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+/* .result {
+    display: hidden;
+} */
+
+.footer {
+    max-height: 300px;
+    background-color: blue;
+}
+
+.footer-text {
+    text-align: center;
+}

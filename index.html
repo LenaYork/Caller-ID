@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Caller ID</title>
+</head>
+<body>
+    <div class="main-container">
+
+        <header class="header">
+            <h1 class="header-text">Определитель номера</h1>
+        </header>
+
+        <section class="caller-id">
+            <div class="main-text">
+                <p>Как узнать, к какому мобильному оператору относится номер телефона? 
+                Чтобы не попасть в минус после пары минут разговора "на другие сети"</p>
+            </div>
+            <div class="form">
+                
+                    <form action="get">
+                        <p class="input-text">Введите номер телефона без символов (в формате 29xxxxxxx)</p>
+                        <input type="text" placeholder="291234567">
+                        <button id="getCallerId">Узнать оператора</button>
+                    </form>
+                
+            </div>
+            <div class="result">
+                <p class="caller-id-result" id="callerIdResult"></p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p class="footer-text">
+                Created by <a href="#">Elena</a> &copy 2019 
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
