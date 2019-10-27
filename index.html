@@ -5,13 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:700i&display=swap" rel="stylesheet">
+    <script src="js/main.js"></script>
     <title>Caller ID</title>
 </head>
 <body>
     <div class="main-container">
 
         <header class="header">
-            <h1 class="header-text">Определитель номера</h1>
+            <div class="header-logo">
+                <a href="index.html"><img src="./src/img/logo.png" alt="logo" class="logo-pic"></a>
+            </div>
+            <div class="header-title">
+                 <h1 class="header-text">Определитель номера</h1>
+            </div>
+           
         </header>
 
         <section class="caller-id">
@@ -21,10 +29,10 @@
             </div>
             <div class="form">
                 
-                    <form action="get">
+                    <form>
                         <p class="input-text">Введите номер телефона без символов (в формате 29xxxxxxx)</p>
-                        <input type="text" placeholder="291234567">
-                        <button id="getCallerId">Узнать оператора</button>
+                        <input type="text" placeholder="291234567" class="input-place">
+                        <button id="getCallerId" class="get-number-button">Узнать оператора</button>
                     </form>
                 
             </div>
