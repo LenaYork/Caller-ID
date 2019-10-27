@@ -1,4 +1,4 @@
-function check() {
+ document.getElementById("getCallerId").onclick = function () {
     let number = document.getElementById("userNumber").value; //связываем id и переменную
     let result;
     
@@ -7,7 +7,7 @@ function check() {
         throw "stop";
     }
     
-     CheckNumber(number);
+     checkNumber(number);
      
     function isNumeric(number) { //проверка на число (должно быть true)
         return !isNaN(parseFloat(number)) && isFinite(number);
@@ -20,7 +20,7 @@ function check() {
         } 
     }
     
-     number = number.toString();
+    number = number.toString();
     let number1 = number.substr(0, 2);
     let cantDefine = "неизвестный оператор. Проверьте номер";
     
