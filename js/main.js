@@ -1,6 +1,8 @@
  document.getElementById("getCallerId").onclick = function () {
     let number = document.getElementById("userNumber").value; //связываем id и переменную
     let result;
+    let finalResult;
+    const NUMBER_LENGTH = 9; //в номере телефона 9 цифр
     
         if (isNumeric(+number) === false) {
         alert ("Номер должен состоять только из цифр 0 - 9. Введите верный номер");
@@ -13,8 +15,8 @@
         return !isNaN(parseFloat(number)) && isFinite(number);
     }
     
-    function checkNumber(number) { //проверка длины тел.номера (должно быть 9) 
-        if (number.length != 9) {     
+    function checkNumber(number) { //проверка длины тел.номера 
+        if (number.length != NUMBER_LENGTH) {     
             alert ("Номер телефона должен содержать 9 цифр, включая код оператора (29,33,44)");
             throw "stop";
         } 
@@ -83,6 +85,8 @@
             result = cantDefine;
             } 
     
-    alert ("Номер "+number +". Это "+ result);
+    // alert ("Номер "+number +". Это "+ result);
+    finalResult = "Номер "+number +". Это "+ result;
+    document.getElementById("callerIdResult").innerHTML = finalResult;
     }
 }

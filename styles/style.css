@@ -48,8 +48,15 @@ body {
 }
 
 
-.main-text p, .form p{
+.main-text p, .form p {
     color: rgb(47, 47, 155);
+    font-size: 1.3em;
+}
+
+.caller-id-result {
+    color: rgb(20, 20, 116);
+    font-size: 1.4em;
+    font-weight: bold;
 }
 
 .main-text {
@@ -108,4 +115,18 @@ body {
     text-decoration: none;
     color:#081175;
     text-shadow: rgb(129, 197, 224) 0 0 2px;
+}
+
+@media only screen and (max-width: 770px) {
+    .header-text {
+        font-size: 23px;
+    }
+
+    .main-text p, .form p {
+        font-size: 15px;
+    }
+
+    .caller-id-result {
+        font-size: 18px;
+    }
 }
