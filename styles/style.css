@@ -148,8 +148,9 @@ body {
         font-size: 15px;
     }
 
-    .logo-pic {
-        width: 50px;
+    .header {
+        display: flex;
+        flex-direction: column;
     }
 }
 
