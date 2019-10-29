@@ -133,7 +133,13 @@ body {
     .logo-pic {
         width: 50px;
     }
+
+    .main-container {
+        width: 100%;
+    }
 }
+
+
 
 @media (max-width: 490px) {
 
