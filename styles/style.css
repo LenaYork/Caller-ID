@@ -129,6 +129,10 @@ body {
     .caller-id-result {
         font-size: 18px;
     }
+
+    .logo-pic {
+        width: 50px;
+    }
 }
 
 @media (max-width: 490px) {
@@ -142,6 +146,10 @@ body {
     }
     .caller-id-result {
         font-size: 15px;
+    }
+
+    .logo-pic {
+        width: 50px;
     }
 }
 
