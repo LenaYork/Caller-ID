@@ -117,7 +117,7 @@ body {
     text-shadow: rgb(129, 197, 224) 0 0 2px;
 }
 
-@media all and (max-width: 770px) {
+@media (max-width: 770px) {
     .header-text {
         font-size: 23px;
     }
@@ -131,7 +131,7 @@ body {
     }
 }
 
-@media all and (max-width: 490px) {
+@media (max-width: 490px) {
 
     .header-text {
         font-size: 20px;
