@@ -85,7 +85,7 @@
             result = cantDefine;
             } 
     
-    // alert ("Номер "+number +". Это "+ result);
+    // alert ("Номер "+number +". Это "+ result);git
     finalResult = "Номер "+number +". Это "+ result;
     document.getElementById("callerIdResult").innerHTML = finalResult;
     }
