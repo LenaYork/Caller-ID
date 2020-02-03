@@ -1,92 +1,45 @@
- document.getElementById("getCallerId").onclick = function () {
-    let number = document.getElementById("userNumber").value; //связываем id и переменную
-    let result;
-    let finalResult;
-    const NUMBER_LENGTH = 9; //в номере телефона 9 цифр
-    
-        if (isNumeric(+number) === false) {
-        alert ("Номер должен состоять только из цифр 0 - 9. Введите верный номер");
-        throw "stop";
-    }
-    
-     checkNumber(number);
-     
-    function isNumeric(number) { //проверка на число (должно быть true)
-        return !isNaN(parseFloat(number)) && isFinite(number);
-    }
-    
-    function checkNumber(number) { //проверка длины тел.номера 
-        if (number.length != NUMBER_LENGTH) {     
-            alert ("Номер телефона должен содержать 9 цифр, включая код оператора (29,33,44)");
-            throw "stop";
-        } 
-    }
-    
+ function getOperator(number) {
     number = number.toString();
-    let number1 = number.substr(0, 2);
-    let cantDefine = "неизвестный оператор. Проверьте номер";
-    
-    getOperatorName (number);
-    
-    function getOperatorName (number) { //определение оператора мобильного тел.
-        if ( number1 == "25" ) {
-            result=" Life!:)";
-        } else if ( number1 == "33" ) {
-                result = "МТС";
-        } else if ( number1 == "44" ) {
-                result = "A1 (Velcom)";
-        } else if (number1 == "29" ) {
-                let number2 = number.substr(2, 1 );
-                    
-                switch(number2) {
-                case "1":
-                case "3":
-                case "6":
-                case "9":
-                result = "Velcom";
-                break;
-                
-                case "2":
-                case "5":
-                case "7":
-                case "8":
-                result = "МТС";
-                break;
-                
-                default:
-                result = cantDefine; 
-                }
-        } else  switch(number1) {
-            case "15":
-            result = "cтационарный телефон, Гродно или Гродненская область";
-            break;
-            
-            case "16":
-            result = "cтационарный телефон, Брест или Брестская область";
-            break;
-            
-            case "17":
-            result = "cтационарный телефон, Минск или Минская область";
-            break;
-            
-            case "21":
-            result = "cтационарный телефон, Витебск или Витебская область";
-            break;
-            
-            case "22":
-            result = "cтационарный телефон, Могилев или Могилевская область";
-            break;
-            
-            case "23":
-            result = "cтационарный телефон, Гомель или Гомельская область";
-            break;
-            
-            default:
-            result = cantDefine;
-            } 
-    
-    // alert ("Номер "+number +". Это "+ result);
-    finalResult = "Номер "+number +". Это "+ result;
-    document.getElementById("callerIdResult").innerHTML = finalResult;
+    const operatorNum = number.substr(0, 2);
+    const firstNum = number.substr(2, 1 );
+    const cantDefine = 'неизвестный оператор. Проверьте номер';
+    let result;
+    const codes = {
+        15: 'cтационарный телефон, Гродно или Гродненская область',
+        16: 'cтационарный телефон, Брест или Брестская область',
+        17: 'cтационарный телефон, Минск или Минская область',
+        21: 'cтационарный телефон, Витебск или Витебская область',
+        22: 'cтационарный телефон, Могилев или Могилевская область',
+        23: 'cтационарный телефон, Гомель или Гомельская область',
+        25: 'Life:)',
+        29: {
+            velcom: [1, 3, 6, 9],
+            mts: [2, 5, 7, 8],
+        },
+        33: 'МТС',
+        44: 'А1(Velcom)',
     }
+    
+    if (operatorNum === '29') {
+        if (codes[operatorNum].velcom.includes(firstNum)) {
+            result = codes[44];
+        } else if (codes[operatorNum].mts.includes(firstNum)) {
+            result = codes[33];
+        } 
+    } else result = codes[operatorNum];
+    return result || cantDefine;
+ }
+
+function defineOperator() {
+    let number = document.getElementById("userNumber").value; //связываем id и переменную
+    let finalResult;
+    // const NUMBER_LENGTH = 9; //в номере телефона 9 цифр
+    const perfectNumber = new RegExp (/[0-9]{9,9}$/);
+   
+    finalResult = (perfectNumber.test(number)) 
+        ? 'Номер '+number +'. Это '+ getOperator(number) 
+        : 'Номер введен некорректно.';
+
+    document.getElementById("callerIdResult").innerHTML = finalResult;
 }
+ document.getElementById("getCallerId").addEventListener('click', defineOperator);
