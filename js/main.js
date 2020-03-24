@@ -21,9 +21,9 @@
     }
     
     if (operatorNum === '29') {
-        if (codes[operatorNum].velcom.includes(firstNum)) {
+        if (codes[operatorNum].velcom.includes(+firstNum)) {
             result = codes[44];
-        } else if (codes[operatorNum].mts.includes(firstNum)) {
+        } else if (codes[operatorNum].mts.includes(+firstNum)) {
             result = codes[33];
         } 
     } else result = codes[operatorNum];
@@ -34,7 +34,7 @@ function defineOperator() {
     let number = document.getElementById("userNumber").value; //связываем id и переменную
     let finalResult;
     // const NUMBER_LENGTH = 9; //в номере телефона 9 цифр
-    const perfectNumber = new RegExp (/[0-9]{9,9}$/);
+    const perfectNumber = new RegExp (/^[0-9]{9,9}$/);
    
     finalResult = (perfectNumber.test(number)) 
         ? 'Номер '+number +'. Это '+ getOperator(number) 
