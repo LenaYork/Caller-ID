@@ -42,4 +42,6 @@ function defineOperator() {
 
     document.getElementById("callerIdResult").innerHTML = finalResult;
 }
- document.getElementById("getCallerId").addEventListener('click', defineOperator);
+//  document.getElementById("getCallerId").addEventListener('click', defineOperator);
+//  document.getElementById("userNumber").addEventListener('focus', defineOperator);
+ document.getElementById("userNumber").addEventListener('keyup', defineOperator);
