@@ -33,7 +33,8 @@ body {
 
 
 .caller-id {
-    height: 500px;
+    /* height: 500px; */
+    height: 480px;
     background-color: rgb(171, 184, 243);
     display: flex;
     flex-direction: column;
