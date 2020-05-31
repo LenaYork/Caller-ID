@@ -49,12 +49,12 @@ body {
 
 
 .main-text p, .form p {
-    color: rgb(47, 47, 155);
-    font-size: 1.3em;
+    color: #2f2f9b;
+    font-size: 1.1em;
 }
 
 .caller-id-result {
-    color: rgb(20, 20, 116);
+    color: #141474;
     font-size: 1.4em;
     font-weight: bold;
 }
@@ -99,6 +99,11 @@ body {
     display: hidden;
 } */
 
+
+.additional_description {
+    font-size: x-small;
+    font-weight: bold;
+}
 
 
 
