@@ -167,3 +167,25 @@ body {
     }
 }
 
+@media (max-height: 640px) {
+    .header-text {
+        font-size: 23px;
+    }
+
+    .main-text p, .form p {
+        font-size: 15px;
+    }
+
+    .caller-id-result {
+        font-size: 18px;
+    }
+
+    .logo-pic {
+        width: 50px;
+    }
+
+    .main-container {
+        width: 100%;
+    }
+}
+
