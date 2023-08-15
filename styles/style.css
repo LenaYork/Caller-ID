@@ -81,6 +81,12 @@ body {
     outline: 1px solid blue;
 }
 
+.input-place::placeholder {
+    font-style: italic;
+    font-weight: normal;
+    color: #a3a1a1;
+}
+
 .get-number-button {
     color: #3131da;
     background-color: white;
