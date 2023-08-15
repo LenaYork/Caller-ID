@@ -1,9 +1,12 @@
 body {
+   margin: 0;
+   padding: 0;
    font-family: 'Montserrat Alternates', sans-serif;
 }
 
 .main-container { 
     margin: 0 auto;
+    height: 100vh;
     width: 75%;
     display: flex;
     flex-direction: column;
@@ -14,97 +17,101 @@ body {
     padding: 5px 15px;
 }
 
-
 .header {
-    max-height: 300px;
-    background: linear-gradient(to bottom, #0e1bb3,  #5f6cff);
-    display: flex;
+    height: 15%;
+    background-image: linear-gradient(to right top, #0d3488, #12419a, #154fad, #175dc1, #176bd4, #2979de, #3887e8, #4795f1, #63a5f2, #7eb5f2, #99c4f2, #b4d3f2);  display: flex;
     justify-content: space-between;
  }
 
-.header-text {
-    text-align: right;
-    font-size: 3em;
-    color:  #050b53;
-    text-shadow: rgb(112, 207, 245) 0 0 2px;
-
+.header-title{
+    display: flex;
+    align-items: center;
 }
 
-
+.header-text {
+    margin: 0;
+    /* text-align: right; */
+    font-size: 3.5vw;
+    color:  #050b53;
+    text-shadow: #70cff5 0 0 2px;
+}
 
 .caller-id {
-    height: 500px;
-    background-color: rgb(171, 184, 243);
+    height: 70%;
+    background-color: #a4b4ff;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     text-align: center;
 }
 
-
 .main-text, .form, .result {
-    width: 60%;
-    margin: 0 auto;
+    width: 80%;
+    /* margin: 0 auto; */
     /* padding: 15px 50px 0px; */
 }
 
-
 .main-text p, .form p {
-    color: rgb(47, 47, 155);
-    font-size: 1.3em;
+    color: #2f2f9b;
+    font-size: 2vw;
 }
 
 .caller-id-result {
-    color: rgb(20, 20, 116);
+    color: #141474;
     font-size: 1.4em;
     font-weight: bold;
 }
 
-.main-text {
-    margin-top: 20px;
-}
-
 .input-place {
-    color: rgb(49, 49, 218);
+    color: #7676ca;
     font-weight: bold;
     height: 20px;
     width: 100px;
+    border: none;
     padding: 5px 10px;
     font-size:16px;
+    transition: 0.5s;
 }
 
 .input-place:hover {
     box-shadow: 0 0 10px #0b0ba1;
 }
 
-.input-place:active {
-    background-color: #5d5dec;
+.input-place:focus {
+    color: #0a0aa0;
+    outline: 1px solid blue;
 }
 
 .get-number-button {
-    color: rgb(49, 49, 218);
+    color: #3131da;
+    background-color: white;
+    border: none;
     font-weight: bold;
     padding: 5px 10px;
     font-size:16px;
+    transition: 0.5s;
 }
 
 .get-number-button:hover {
     box-shadow: 0 0 10px #0b0ba1;
+    cursor: pointer;
 }
 
 .get-number-button:active {
-    background-color: #5d5dec;
+    transform: scale(105%);
 }
 
-/* .result {
-    display: hidden;
-} */
-
-
-
+.result {
+    height: 25%;
+}
 
 .footer {
-    max-height: 300px;
-    background: linear-gradient(to top, #0e1bb3,  #5f6cff);
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right top, #0d3488, #12419a, #154fad, #175dc1, #176bd4, #2979de, #3887e8, #4795f1, #63a5f2, #7eb5f2, #99c4f2, #b4d3f2);
 }
 
 .footer-text {
@@ -114,16 +121,21 @@ body {
 .footer a {
     text-decoration: none;
     color:#081175;
-    text-shadow: rgb(129, 197, 224) 0 0 2px;
+    text-shadow: #81c5e0 0 0 2px;
+    transition: 0.5s;
+}
+
+.footer a:hover {
+    color: #2a7fa0;
 }
 
 @media (max-width: 770px) {
     .header-text {
-        font-size: 23px;
+        font-size: 4.5vw;
     }
 
     .main-text p, .form p {
-        font-size: 15px;
+        font-size: 3vw;
     }
 
     .caller-id-result {
@@ -139,17 +151,16 @@ body {
     }
 }
 
-
-
 @media (max-width: 490px) {
 
     .header-text {
-        font-size: 20px;
+        font-size: 6vw;
     }
 
     .main-text p, .form p {
-        font-size: 13px;
+        font-size: 3.5vw;
     }
+    
     .caller-id-result {
         font-size: 15px;
     }
