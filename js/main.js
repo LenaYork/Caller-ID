@@ -1,3 +1,5 @@
+ const userNumberInput = document.getElementById("userNumber");
+ 
  function showOperator(number) {
     number = number.toString();
     const operatorNum = number.substr(0, 2);
@@ -31,15 +33,19 @@
  }
 
 function defineOperator() {
-    let number = document.getElementById("userNumber").value;
-    let finalResult;
+    let finalResult = "";
+    let number = userNumberInput.value;
+    const numberPattern = /^\d+$/;
+    if (!numberPattern.test(number)) {
+        finalResult = "Используйте только цифры! ";
+    } 
+
     const perfectNumber = new RegExp (/^[0-9]{9,9}$/);
-   
-    finalResult = (perfectNumber.test(number)) 
+    finalResult += (perfectNumber.test(number)) 
         ? 'Номер '+number +'. Это '+ showOperator(number) 
         : 'Номер введен некорректно.';
 
     document.getElementById("callerIdResult").innerHTML = finalResult;
 }
 
-document.getElementById("userNumber").addEventListener('keyup', defineOperator);
+userNumberInput.addEventListener('keyup', defineOperator);
