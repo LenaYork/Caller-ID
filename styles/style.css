@@ -19,7 +19,8 @@ body {
 
 .header {
     height: 15%;
-    background-image: linear-gradient(to right top, #0d3488, #12419a, #154fad, #175dc1, #176bd4, #2979de, #3887e8, #4795f1, #63a5f2, #7eb5f2, #99c4f2, #b4d3f2);  display: flex;
+    background-image: linear-gradient(to right top, #0d3488, #12419a, #154fad, #175dc1, #176bd4, #2979de, #3887e8, #4795f1, #63a5f2, #7eb5f2, #99c4f2, #b4d3f2);  
+    display: flex;
     justify-content: space-between;
  }
 
@@ -30,7 +31,6 @@ body {
 
 .header-text {
     margin: 0;
-    /* text-align: right; */
     font-size: 3.5vw;
     color:  #050b53;
     text-shadow: #70cff5 0 0 2px;
@@ -48,8 +48,6 @@ body {
 
 .main-text, .form, .result {
     width: 80%;
-    /* margin: 0 auto; */
-    /* padding: 15px 50px 0px; */
 }
 
 .main-text p, .form p {
@@ -160,7 +158,7 @@ body {
     .main-text p, .form p {
         font-size: 3.5vw;
     }
-    
+
     .caller-id-result {
         font-size: 15px;
     }

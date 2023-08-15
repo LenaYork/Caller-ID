@@ -1,4 +1,4 @@
- function getOperator(number) {
+ function showOperator(number) {
     number = number.toString();
     const operatorNum = number.substr(0, 2);
     const firstNum = number.substr(2, 1 );
@@ -31,17 +31,15 @@
  }
 
 function defineOperator() {
-    let number = document.getElementById("userNumber").value; //связываем id и переменную
+    let number = document.getElementById("userNumber").value;
     let finalResult;
-    // const NUMBER_LENGTH = 9; //в номере телефона 9 цифр
     const perfectNumber = new RegExp (/^[0-9]{9,9}$/);
    
     finalResult = (perfectNumber.test(number)) 
-        ? 'Номер '+number +'. Это '+ getOperator(number) 
+        ? 'Номер '+number +'. Это '+ showOperator(number) 
         : 'Номер введен некорректно.';
 
     document.getElementById("callerIdResult").innerHTML = finalResult;
 }
-//  document.getElementById("getCallerId").addEventListener('click', defineOperator);
-//  document.getElementById("userNumber").addEventListener('focus', defineOperator);
- document.getElementById("userNumber").addEventListener('keyup', defineOperator);
+
+document.getElementById("userNumber").addEventListener('keyup', defineOperator);
