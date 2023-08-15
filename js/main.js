@@ -1,6 +1,6 @@
- const userNumberInput = document.getElementById("userNumber");
+const userNumberInput = document.getElementById("userNumber");
  
- function showOperator(number) {
+function showOperator(number) {
     number = number.toString();
     const operatorNum = number.substr(0, 2);
     const firstNum = number.substr(2, 1 );
@@ -30,22 +30,29 @@
         } 
     } else result = codes[operatorNum];
     return result || cantDefine;
- }
-
-function defineOperator() {
-    let finalResult = "";
-    let number = userNumberInput.value;
-    const numberPattern = /^\d+$/;
-    if (!numberPattern.test(number)) {
-        finalResult = "Используйте только цифры! ";
-    } 
-
-    const perfectNumber = new RegExp (/^[0-9]{9,9}$/);
-    finalResult += (perfectNumber.test(number)) 
-        ? 'Номер '+number +'. Это '+ showOperator(number) 
-        : 'Номер введен некорректно.';
-
-    document.getElementById("callerIdResult").innerHTML = finalResult;
 }
 
-userNumberInput.addEventListener('keyup', defineOperator);
+ function checkUserInput(num) {
+    const numberPattern = /^\d+$/;
+    if (num && !numberPattern.test(num)) {
+        return "Используйте только цифры! ";
+    } else return "";
+}
+
+function defineOperator(num) {
+    const perfectNumber = new RegExp (/^[0-9]{9,9}$/);
+    if (num === "") {
+        return "";
+    }
+    return (perfectNumber.test(num)) 
+        ? 'Номер '+num +'. Это '+ showOperator(num) 
+        : 'Номер введен некорректно.';
+}
+
+function createResultMessage() {
+    const number = userNumberInput.value;
+
+    document.getElementById("callerIdResult").innerHTML = checkUserInput(number) + defineOperator(number);
+}
+
+userNumberInput.addEventListener('keyup', createResultMessage);
