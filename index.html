@@ -10,10 +10,29 @@
     <title>Caller ID</title>
 </head>
 <body>
+     <div class="main-info-container" id="mainInfoContainer">
+        <div class="main-info" id="mainInfo">
+            <div class="close-icon" id="closeIcon">x</div>
+            <p>На территории Республики Беларусь действует 3 основных мобильных оператора: 
+                <span class="provider-name">A1</span>,
+                <span class="provider-name">МТС</span> и 
+                <span class="provider-name">Life</span>.
+                Звонки между разными операторами могут оказаться недешевыми, поэтому нелишним будет 
+                выяснить заранее, к какому оператору относится тот или иной номер. Информация была актуальна в конце 2010-х,
+                до того, как появилась возможность переносить номера с одного оператора на другой.
+            </p>
+            <p>
+                Этот определитель номера позволяет также узнать, в какой области страны находится стационарный телефон,
+                поскольку тарифы между областями отличаются от городских тарифов.
+            </p>
+        </div> 
+    </div>
+    
     <div class="main-container">
 
         <header class="header">
-            <div class="header-logo">
+            <div class="header-info" id="questionIcon">
+                <img src="./src/img/question-mark.png" class="question-icon">
             </div>
             <div class="header-title">
                  <h1 class="header-text">Определитель номера</h1>
@@ -22,6 +41,8 @@
         </header>
 
         <section class="caller-id">
+           
+            
             <div class="main-text">
                 <p>Как узнать, к какому мобильному оператору относится номер телефона? 
                 Чтобы не попасть в минус после пары минут разговора "на другие сети"</p>

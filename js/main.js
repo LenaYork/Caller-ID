@@ -55,4 +55,20 @@ function createResultMessage() {
     document.getElementById("callerIdResult").innerHTML = checkUserInput(number) + defineOperator(number);
 }
 
+function showInfo() {
+    console.log("open")
+    document.querySelector(".main-container").classList.add("inactive-bg");
+    document.querySelector("#mainInfoContainer").classList.add("active-modal");
+    document.querySelector("#mainInfo").classList.add("active-modal");
+}
+
+function hideInfo() {
+    console.log("close")
+    document.querySelector(".main-container").classList.remove("inactive-bg");
+    document.querySelector("#mainInfoContainer").classList.remove("active-modal");
+    document.querySelector("#mainInfo").classList.remove("active-modal");
+}
+
 userNumberInput.addEventListener('keyup', createResultMessage);
+document.querySelector("#questionIcon").addEventListener("click", showInfo);
+document.querySelector("#closeIcon").addEventListener("click", hideInfo);
