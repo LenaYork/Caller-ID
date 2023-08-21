@@ -19,7 +19,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /* z-index: 1; */
+    background-color: #a4b4ff;
 }
 
 .header, .caller-id, .footer {
@@ -32,7 +32,7 @@ body {
     align-items: center;
     background-image: linear-gradient(to right top, #0d3488, #12419a, #154fad, #175dc1, #176bd4, #2979de, #3887e8, #4795f1, #63a5f2, #7eb5f2, #99c4f2, #b4d3f2);  
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
  }
 
 .header-title{
@@ -47,6 +47,11 @@ body {
     text-shadow: #70cff5 0 0 2px;
 }
 
+.header-info {
+    display: flex;
+    align-items: center;
+}
+
 .header-info, .question-icon {
     height: 70px;
     transition: transform 0.5s;
@@ -58,7 +63,7 @@ body {
 }
 
 .caller-id {
-    height: 70%;
+    min-height: 70vh;
     background-color: #a4b4ff;
     display: flex;
     flex-direction: column;
@@ -123,12 +128,12 @@ body {
 }
 
 .main-text, .form, .result {
-    width: 80%;
+    width: 90%;
 }
 
 .main-text p, .form p {
     color: #2f2f9b;
-    font-size: 2vw;
+    font-size: 1.4rem;
 }
 
 .caller-id-result {
@@ -187,7 +192,7 @@ body {
 }
 
 .footer {
-    height: 15%;
+    height: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -216,12 +221,42 @@ body {
 }
 
 @media (max-width: 770px) {
+    @media screen and (orientation: landscape) {
+        body {
+          overflow: auto;
+        }
+    
+        .main-container {
+            height: 100%;
+        }
+    
+        .header {
+            height: 100px;
+        }
+    
+        .header-text {
+            font-size: 1.7rem;
+        }
+    
+        .caller-id {
+            min-height: 320px;
+        }
+        
+        .header-info, .question-icon {
+            height: 70%; 
+        }
+    
+        .footer {
+            height: 50px;
+        }
+    }
+
     .header-text {
         font-size: 4.5vw;
     }
 
     .main-text p, .form p {
-        font-size: 3vw;
+        font-size: 1.3rem;
     }
 
     .caller-id-result {
@@ -245,11 +280,11 @@ body {
     }
 
     .main-text p, .form p {
-        font-size: 3.5vw;
+        font-size: 1rem;
     }
 
     .caller-id-result {
-        font-size: 15px;
+        font-size: 17px;
     }
 
     .header-info, .question-icon {
@@ -259,6 +294,10 @@ body {
     .main-info {
         width: 70%;
         font-size: 3vw;
+    }
+
+    .footer-text {
+        font-size: 13px;
     }
 }
 
